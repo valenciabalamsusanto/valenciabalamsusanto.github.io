@@ -129,7 +129,7 @@ export const projects = [
     title: 'Ask My AI: A Chatbot About Me',
     tag: 'LLMs',
     blurb:
-      'A chatbot that answers questions about me from my CV, a reference letter, this website and project reports, and says so when it does not know.',
+      'A chatbot that answers questions about me from my CV, two reference letters, this website and project reports, and says so when it does not know.',
     sum: "Can a chatbot answer a recruiter's questions about me without ever making something up?",
     role: 'Personal project',
     when: 'Nov 2026',
@@ -137,15 +137,15 @@ export const projects = [
     chat: true,
     stats: [
       { n: '48 / 48', l: 'test questions passed, including 16 it had to refuse' },
-      { n: '176', l: 'short passages from my CV, a reference letter, this website and my project reports' },
+      { n: '179', l: 'short passages from my CV, two reference letters, this website and my project reports' },
       { n: '6–18 s', l: 'time to answer on the live site once the server is awake' },
       { n: '0', l: 'phone numbers or <br>e-mail addresses it can share: all removed before indexing' },
     ],
     problem:
       'Chatbots are good at sounding confident, which is a problem when the subject is a real person. A recruiter asking about me needs answers that are true, and a clear "I don\'t know" when my documents don\'t say. This project tests whether a chatbot can answer only from my own documents, and admit when they do not cover a question.',
     approach: [
-      'Collected my CV, a recommendation letter from my MTR internship manager, the text of this website and the reports of my loan, gold, Amazon and Netflix projects, and removed every phone number and e-mail address before indexing.',
-      'Split them into 176 short passages and built a RAG chatbot (it looks up my documents before answering, instead of relying on memory).',
+      'Collected my CV, recommendation letters from my MTR internship manager and my PolyU research supervisor, the text of this website and the reports of my loan, gold, Amazon and Netflix projects, and removed every phone number and e-mail address before indexing.',
+      'Split them into 179 short passages and built a RAG chatbot (it looks up my documents before answering, instead of relying on memory).',
       'Searched the passages both by meaning and by keyword, re-ranked the best matches with a second model, and let the LLM (DeepSeek) answer only from the top five.',
       'Told it to say it is unsure when even the best match is a poor fit, and to list the documents each answer came from.',
       'Limited each visitor to 15 questions every 10 minutes. Questions and answers were logged during testing, but the live version does not store them.',
